@@ -13,13 +13,14 @@ verifier:
   name: inspec
 
 platforms:
-  - name: centos-7
+  - name: centos-7.4
 
 suites:
   - name: default
     run_list:
-      - recipe[http::default]
+      - recipe[clh_ventana::default]
     verifier:
       inspec_tests:
         - test/smoke/default
+    data_bags_path: "test/data_bags"
     attributes:
